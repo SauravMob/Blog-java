@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.sql.Blob;
+import java.time.Instant;
 
 @Entity
 @Data
@@ -24,13 +25,15 @@ public class Post {
 
     private String details;
 
-    private Blob image;
+    private String image;
 
-    @ManyToOne
-    @JoinColumn(name = "category_id")
-    private Category category;
+    private String category;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User user;
+    private String tags;
+
+    private Long user_id;
+
+    private Instant created_on;
+
+    private Instant updated_on;
 }
